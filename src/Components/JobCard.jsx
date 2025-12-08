@@ -1,7 +1,5 @@
 import "../Styles/JobCard.css";
 function JobCard({ jobs }) {
-  console.log(jobs);
-
   return (
     <>
       <div className='job-card'>
@@ -15,9 +13,9 @@ function JobCard({ jobs }) {
         </div>
         <div className='company-name'>{jobs.companyName}</div>
         <div className='work-type'>
-          <span className='location'>OnSite</span>
-          <span className='skills'>{jobs.seniorityLevel}</span>
           <span className='employment-type'>{jobs.employmentType}</span>
+          <span className='job-type'>{jobs.jobType}</span>
+          <span className='senority'>{jobs.seniorityLevel}</span>
         </div>
         <div className='location-price'>
           <span>{jobs.location}</span>
@@ -26,9 +24,9 @@ function JobCard({ jobs }) {
         <br />
         <div className='jobtype-btn'>
           <span>{jobs.jobType}</span>
-          <div className='btns'>
+          <div className='btn'>
             <button>✏️</button>
-            <button>🗑️</button>
+            <button onClick={() => deleteJobs}>🗑️</button>
           </div>
         </div>
       </div>

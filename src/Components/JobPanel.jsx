@@ -5,7 +5,7 @@ function JobPanel({ jobs }) {
   return (
     <div className='job-panel'>
       <div className='head-container'>
-        <h2>10Jobs</h2>
+        <h2>{jobs.length}Jobs</h2>
         <button className='add-job-btn'>Add New Job</button>
       </div>
 

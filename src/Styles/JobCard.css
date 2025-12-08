@@ -3,11 +3,39 @@
   margin: 2px 2px;
   background-color: aliceblue;
   border-radius: 2px;
+  padding: 4px 4px;
 }
 .logo-date {
   display: flex;
+  margin-top: 2px;
+  gap: 90px;
 }
 
 .company-name {
-  font-size: large;
+  font-weight: 700;
+}
+
+.work-type {
+  display: flex;
+  margin-top: 5px;
+
+  gap: 6px;
+  font-weight: 400;
+}
+
+.location-price {
+  margin: 2px 4px;
+  display: flex;
+  font-weight: 500;
+  gap: 40px;
+}
+.jobtype-btn {
+  margin-top: -2px;
+  margin-bottom: 3px;
+  display: flex;
+  gap: 80px;
+  font-weight: 500;
+}
+button {
+  cursor: pointer;
 }
