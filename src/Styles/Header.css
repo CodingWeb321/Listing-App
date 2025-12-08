@@ -1,0 +1,46 @@
+.main-header {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.main-nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+}
+
+.main-nav a:hover,
+.main-nav a.active-link {
+  color: #4a90e2;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  background-color: #e0e0e0;
+  color: #4a90e2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}

@@ -1,0 +1,19 @@
+.head-container {
+  display: flex;
+  gap: 80%;
+}
+
+.add-job-btn {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  background-color: blue;
+  color: aliceblue;
+  border-radius: 20px;
+}
+.job-cards-container {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2px;
+}

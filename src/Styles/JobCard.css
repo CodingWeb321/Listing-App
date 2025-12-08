@@ -1,0 +1,13 @@
+.job-card {
+  border: 2px solid rgb(211, 206, 206);
+  margin: 2px 2px;
+  background-color: aliceblue;
+  border-radius: 2px;
+}
+.logo-date {
+  display: flex;
+}
+
+.company-name {
+  font-size: large;
+}

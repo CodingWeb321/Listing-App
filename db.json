@@ -1,0 +1,124 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "jobTitle": "Lead UI/UX Designer",
+      "companyName": "InVision",
+      "companyLogo": "./assets/react.svg",
+      "postedDate": "2025-11-28",
+      "jobType": "Design",
+      "employmentType": "Full Time",
+      "seniorityLevel": "Senior",
+      "location": "New York, US",
+      "salary": "$12,000"
+    },
+    {
+      "id": 2,
+      "jobTitle": "Junior React Developer",
+      "companyName": "TechCorp",
+      "companyLogo": "techcorp-logo.png",
+      "postedDate": "2025-11-29",
+      "jobType": "Developer",
+      "employmentType": "Intern",
+      "seniorityLevel": "Intern",
+      "location": "Remote",
+      "salary": "$1,800"
+    },
+    {
+      "id": 3,
+      "jobTitle": "Cloud Solutions Architect",
+      "companyName": "AWS",
+      "companyLogo": "aws-logo.png",
+      "postedDate": "2025-11-25",
+      "jobType": "Architect",
+      "employmentType": "Contract",
+      "seniorityLevel": "Mid-Level",
+      "location": "Seattle, US",
+      "salary": "$15,000"
+    },
+    {
+      "id": 4,
+      "jobTitle": "Content Marketing Manager",
+      "companyName": "Growth Agency",
+      "companyLogo": "growth-logo.png",
+      "postedDate": "2025-11-27",
+      "jobType": "Marketing",
+      "employmentType": "Full Time",
+      "seniorityLevel": "Mid-Level",
+      "location": "London, UK",
+      "salary": "$6,500"
+    },
+    {
+      "id": 5,
+      "jobTitle": "DevOps Engineer",
+      "companyName": "Datadog",
+      "companyLogo": "datadog-logo.png",
+      "postedDate": "2025-11-24",
+      "jobType": "Engineer",
+      "employmentType": "Full Time",
+      "seniorityLevel": "Senior",
+      "location": "Paris, France",
+      "salary": "$10,500"
+    },
+    {
+      "id": 6,
+      "jobTitle": "Freelance PHP Developer",
+      "companyName": "WebSolutions",
+      "companyLogo": "websol-logo.png",
+      "postedDate": "2025-12-01",
+      "jobType": "Developer",
+      "employmentType": "Freelance",
+      "seniorityLevel": "Junior",
+      "location": "Remote",
+      "salary": "$3,000"
+    },
+    {
+      "id": 7,
+      "jobTitle": "Part-Time Administrative Assistant",
+      "companyName": "Local Business Co.",
+      "companyLogo": "local-logo.png",
+      "postedDate": "2025-11-30",
+      "jobType": "Other",
+      "employmentType": "Part Time",
+      "seniorityLevel": "Entry Level",
+      "location": "Chicago, US",
+      "salary": "$2,500"
+    },
+    {
+      "id": 8,
+      "jobTitle": "Senior Data Scientist",
+      "companyName": "DeepMind",
+      "companyLogo": "deepmind-logo.png",
+      "postedDate": "2025-11-20",
+      "jobType": "Engineer",
+      "employmentType": "Full Time",
+      "seniorityLevel": "Senior",
+      "location": "Mountain View, US",
+      "salary": "$18,000"
+    },
+    {
+      "id": 9,
+      "jobTitle": "Associate Product Manager",
+      "companyName": "Zappos",
+      "companyLogo": "zappos-logo.png",
+      "postedDate": "2025-11-23",
+      "jobType": "Management",
+      "employmentType": "Full Time",
+      "seniorityLevel": "Junior",
+      "location": "Las Vegas, US",
+      "salary": "$9,000"
+    },
+    {
+      "id": 10,
+      "jobTitle": "Entry Level Architect",
+      "companyName": "GreenBuild",
+      "companyLogo": "greenbuild-logo.png",
+      "postedDate": "2025-11-26",
+      "jobType": "Architect",
+      "employmentType": "Full Time",
+      "seniorityLevel": "Intern",
+      "location": "Sydney, Australia",
+      "salary": "$4,500"
+    }
+  ]
+}
