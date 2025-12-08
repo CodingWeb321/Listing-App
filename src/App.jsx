@@ -9,8 +9,8 @@ import JobCard from "./Components/JobCard.jsx";
 
 function App() {
   const [jobs, setJobs] = useState([]);
-  const [loading, setLoadings] = useState("true");
 
+  //fetching data to load at first !
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -23,13 +23,25 @@ function App() {
     fetchJobs();
   }, []);
 
+  //delete logic
+  const deleteJob = async (id) => {
+    try {
+      await axios.delete(`api/jobs/${id}`);
+      const updatedJobs = jobs.filter((job) => job.id !== id);
+      setJobs(updatedJobs);
+      console.log(`Successfully deleted job ID: ${id}`);
+    } catch (error) {
+      console.log(`Error's deleting jobs:`, error);
+    }
+  };
+
   return (
     <>
       <Header />
       <br />
       <Text />
       <br />
-      <Body jobs={jobs} />
+      <Body jobs={jobs} onDelete={deleteJob} />
     </>
   );
 }

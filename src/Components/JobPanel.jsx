@@ -1,7 +1,7 @@
 import "../Styles/JobPanel.css";
 import JobCard from "./JobCard";
 
-function JobPanel({ jobs }) {
+function JobPanel({ jobs, onDelete }) {
   return (
     <div className='job-panel'>
       <div className='head-container'>
@@ -11,7 +11,7 @@ function JobPanel({ jobs }) {
 
       <div className='job-cards-container'>
         {jobs.map((job) => (
-          <JobCard key={job.id} jobs={job} />
+          <JobCard key={job.id} jobs={job} onDelete={onDelete} />
         ))}
       </div>
     </div>

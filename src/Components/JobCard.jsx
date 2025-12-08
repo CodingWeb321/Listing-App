@@ -1,5 +1,5 @@
 import "../Styles/JobCard.css";
-function JobCard({ jobs }) {
+function JobCard({ jobs, onDelete }) {
   return (
     <>
       <div className='job-card'>
@@ -26,7 +26,7 @@ function JobCard({ jobs }) {
           <span>{jobs.jobType}</span>
           <div className='btn'>
             <button>✏️</button>
-            <button onClick={() => deleteJobs}>🗑️</button>
+            <button onClick={() => onDelete(jobs.id)}>🗑️</button>
           </div>
         </div>
       </div>
