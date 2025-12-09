@@ -5,8 +5,9 @@ function JobCard({ jobs, onDelete }) {
       <div className='job-card'>
         <div className='logo-date'>
           <img
+            style={{ width: "50px", height: "50px", objectFit: "contain" }}
             key={jobs.id}
-            // src={jobs.companyName.charAt(0)}
+            src={jobs.companyLogo}
             alt={jobs.companyName.charAt(0)}
           />
           <p>{jobs.postedDate}</p>
