@@ -5,7 +5,6 @@ import Header from "./Components/Header.jsx";
 import Text from "./Components/Text.jsx";
 import Body from "./Components/Body.jsx";
 import axios from "axios";
-import JobCard from "./Components/JobCard.jsx";
 
 function App() {
   const [jobs, setJobs] = useState([]);
@@ -35,13 +34,16 @@ function App() {
     }
   };
 
+  const handleJobAdded = (newJob) => {
+    setJobs([...jobs, newJob]);
+  };
   return (
     <>
       <Header />
       <br />
       <Text />
       <br />
-      <Body jobs={jobs} onDelete={deleteJob} />
+      <Body jobs={jobs} onDelete={deleteJob} onJobAdded={handleJobAdded} />
     </>
   );
 }

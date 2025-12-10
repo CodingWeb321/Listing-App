@@ -1,13 +1,26 @@
 import "../Styles/JobPanel.css";
+import AddJobModal from "./AddJobModal";
 import JobCard from "./JobCard";
 
-function JobPanel({ jobs, onDelete }) {
+import { useState } from "react";
+
+function JobPanel({ jobs, onDelete, onJobAdded }) {
+  const [showModal, setShowmodal] = useState(false);
   return (
     <div className='job-panel'>
       <div className='head-container'>
         <h2>{jobs.length}Jobs</h2>
-        <button className='add-job-btn'>Add New Job</button>
+        <button className='add-job-btn' onClick={() => setShowmodal(true)}>
+          Add New Job
+        </button>
       </div>
+
+      {showModal && (
+        <AddJobModal
+          onClose={setShowmodal}
+          onJobAdded={onJobAdded}
+        ></AddJobModal>
+      )}
 
       <div className='job-cards-container'>
         {jobs.map((job) => (
