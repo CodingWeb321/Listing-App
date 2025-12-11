@@ -8,6 +8,7 @@ import axios from "axios";
 
 function App() {
   const [jobs, setJobs] = useState([]);
+  const [jobToEdit, setJobToEdit] = useState(null); //edit
 
   //fetching data to load at first !
   useEffect(() => {
@@ -34,16 +35,51 @@ function App() {
     }
   };
 
+  //Job Add
   const handleJobAdded = (newJob) => {
     setJobs([...jobs, newJob]);
   };
+
+  //edit
+  const handleEditJob = (job) => {
+    setJobToEdit(job);
+  };
+
+  const handleJobUpdated = async (updatedJob) => {
+    try {
+      const response = await axios.put(
+        `/api/jobs/${updatedJob.id}`,
+        updatedJob
+      );
+
+      // Update the state with the server's response
+      const updatedJobs = jobs.map((job) =>
+        job.id === response.data.id ? response.data : job
+      );
+      setJobs(updatedJobs);
+      setJobToEdit(null);
+      alert(`Job ID: ${response.data.id} updated successfully!`);
+    } catch (error) {
+      console.error("Error updating job:", error);
+    }
+  };
+  //-----------------------------------------------------------//
   return (
     <>
       <Header />
       <br />
       <Text />
       <br />
-      <Body jobs={jobs} onDelete={deleteJob} onJobAdded={handleJobAdded} />
+      <Body
+        jobs={jobs}
+        onDelete={deleteJob}
+        onJobAdded={handleJobAdded}
+        //edit props
+        onEdit={handleEditJob}
+        jobToEdit={jobToEdit}
+        onJobUpdated={handleJobUpdated}
+        onCloseEdit={() => setJobToEdit(null)}
+      />
     </>
   );
 }

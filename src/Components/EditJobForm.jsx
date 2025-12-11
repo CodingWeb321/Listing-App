@@ -1,31 +1,17 @@
-import { useState } from "react";
-import axios from "axios";
-import "../Styles/AddJobForm.css";
+import { useState, useEffect } from "react";
+import "../Styles/AddJobForm.css"; // Reuse the same styles
 
-function AddJobForm({ onJobAdded }) {
-  const initialFormData = {
-    jobTitle: "",
-    companyName: "",
-    companyLogo: "",
-    postedDate: "",
-    jobType: "",
-    employmentType: "",
-    seniorityLevel: "",
-    location: "",
-    salary: "",
-  };
-  const [formData, setFormData] = useState(initialFormData);
+function EditJobForm({ job, onUpdate, onClose }) {
+  const [formData, setFormData] = useState(job);
 
-  function handleReset() {
-    setFormData(initialFormData);
-  }
+  useEffect(() => {
+    setFormData(job);
+  }, [job]);
 
   function handleChange(e) {
-    // console.log(e.target.name);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  //it's only for logo handling
   function handleLogoChange(e) {
     const file = e.target.files[0];
     if (file) {
@@ -43,23 +29,17 @@ function AddJobForm({ onJobAdded }) {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const jobToSubmit = {
-        ...formData,
-        postedDate: new Date().toLocaleDateString(),
-      };
+      await onUpdate(formData);
 
-      const response = await axios.post("api/jobs", jobToSubmit);
-      if (onJobAdded) onJobAdded(response.data);
-      alert("Job Added Succesfully");
-
-      handleReset();
+      onClose();
     } catch (error) {
-      console.log(error);
+      console.error("Error submitting edited job:", error);
     }
   }
+
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add Job</h2>
+      <h2>Edit Job (ID: {formData.id})</h2>
 
       {/* FULL WIDTH FIELD */}
       <div className='full-width'>
@@ -75,7 +55,6 @@ function AddJobForm({ onJobAdded }) {
         />
       </div>
 
-      {/* TWO COLUMN ROW */}
       <div className='row'>
         <div>
           <label htmlFor='jobType'>Job Type*</label>
@@ -132,7 +111,7 @@ function AddJobForm({ onJobAdded }) {
             type='number'
             name='salary'
             id='salary'
-            value={formData.salary}
+            value={formData.salary || ""}
             onChange={handleChange}
           />
         </div>
@@ -180,15 +159,16 @@ function AddJobForm({ onJobAdded }) {
 
       {/* BUTTONS */}
       <div className='button'>
-        <button type='button' onClick={handleReset} className='cancel-btn'>
+        <button type='button' onClick={onClose} className='cancel-btn'>
           Cancel
         </button>
+
         <button type='submit' className='publish-btn'>
-          Publish
+          Update Job
         </button>
       </div>
     </form>
   );
 }
 
-export default AddJobForm;
+export default EditJobForm;
