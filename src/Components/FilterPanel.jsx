@@ -92,7 +92,6 @@ function FilterPanel({
         </div>
       </div>
 
-      {/* 2. Seniority Level Filter (NEW) */}
       <div className='filter-group'>
         <label>Seniority Level*</label>
         <div className='filter-buttons-container'>
@@ -112,7 +111,6 @@ function FilterPanel({
         </div>
       </div>
 
-      {/* 3. Employment Type Filter (NEW) */}
       <div className='filter-group'>
         <label>Employment Type*</label>
         <div className='filter-buttons-container'>
