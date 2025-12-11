@@ -18,7 +18,6 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   //fetching data to load at first !
 
-  const [showAlert, setShowAlert] = useState(null);
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -66,7 +65,7 @@ function App() {
       );
       setAllJobs(updatedJobs);
       setJobToEdit(null);
-      setShowAlert("Job Added Successfully");
+      alert("Job Added Successfully");
     } catch (error) {
       console.error("Error updating job:", error);
     }
@@ -90,13 +89,18 @@ function App() {
   //  FILTERING LOGIC
 
   const filteredJobs = allJobs.filter((job) => {
-    const lowerQuery = searchQuery.toLowerCase();
+    const keywords = searchQuery.toLowerCase().split(/\s+/).filter(Boolean);
+
+    const jobText = (
+      job.jobTitle +
+      " " +
+      job.companyName +
+      " " +
+      job.location
+    ).toLowerCase();
 
     const matchesText =
-      !searchQuery ||
-      job.jobTitle.toLowerCase().includes(lowerQuery) ||
-      job.companyName.toLowerCase().includes(lowerQuery) ||
-      job.location.toLowerCase().includes(lowerQuery);
+      !searchQuery || keywords.every((keyword) => jobText.includes(keyword));
 
     const matchesJobType = !jobTypeFilter || job.jobType === jobTypeFilter;
     const matchesSeniority =

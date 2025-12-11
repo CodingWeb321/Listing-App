@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../Styles/AddJobForm.css";
 
-function AddJobForm({ onJobAdded }) {
+function AddJobForm({ onJobAdded, onClose }) {
   const initialFormData = {
     jobTitle: "",
     companyName: "",

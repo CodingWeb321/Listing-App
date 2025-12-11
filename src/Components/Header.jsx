@@ -1,10 +1,13 @@
+import { MdStar } from "react-icons/md";
 import "../Styles/Header.css";
 
 const Header = () => {
   return (
     <header className='main-header'>
       <div className='logo-container'>
-        <span className='logo'>⚫ Jobseeker</span>
+        <span className='logo'>
+          <MdStar style={{ color: "#007bff" }} /> Jobseeker
+        </span>
       </div>
       <nav className='main-nav'>
         <a href='#jobs' className='active-link'>

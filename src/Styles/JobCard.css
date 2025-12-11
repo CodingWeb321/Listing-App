@@ -39,3 +39,8 @@
 button {
   cursor: pointer;
 }
+
+.btn {
+  display: flex;
+  gap: 5px;
+}

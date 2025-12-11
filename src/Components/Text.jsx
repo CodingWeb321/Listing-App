@@ -1,8 +1,12 @@
 import "../Styles/Text.css";
 
 function Text(props) {
-  const firstText = `The Most Complete Job 
- Listings In The World`;
+  const firstText = (
+    <>
+      The <span className='blueText'>Most Complete</span> Job
+      <br /> ☆ Listings In The World ☆
+    </>
+  );
   const secondText = `Discover the job you want at top companies`;
   return (
     <>

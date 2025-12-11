@@ -1,4 +1,5 @@
 import "../Styles/JobCard.css";
+import { MdDelete, MdEdit } from "react-icons/md";
 function JobCard({ jobs, onDelete, onEdit }) {
   return (
     <>
@@ -30,8 +31,12 @@ function JobCard({ jobs, onDelete, onEdit }) {
         <div className='jobtype-btn'>
           <span>{jobs.jobType}</span>
           <div className='btn'>
-            <button onClick={() => onEdit(jobs)}>✏️</button>
-            <button onClick={() => onDelete(jobs.id)}>🗑️</button>
+            <button onClick={() => onEdit(jobs)}>
+              <MdEdit style={{ color: "chocolate" }} />
+            </button>
+            <button onClick={() => onDelete(jobs.id)}>
+              <MdDelete style={{ color: "red" }} />
+            </button>
           </div>
         </div>
       </div>

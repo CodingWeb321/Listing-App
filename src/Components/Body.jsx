@@ -1,4 +1,3 @@
-import React from "react";
 import FilterPanel from "./FilterPanel";
 import JobPanel from "./JobPanel";
 import "../Styles/Body.css";
