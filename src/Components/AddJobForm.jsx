@@ -53,6 +53,7 @@ function AddJobForm({ onJobAdded }) {
       alert("Job Added Succesfully");
 
       handleReset();
+      onClose(false);
     } catch (error) {
       console.log(error);
     }

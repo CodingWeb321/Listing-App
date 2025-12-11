@@ -1,4 +1,4 @@
-import "../Styles/AddJobModal.css"; // Reuse the same styles
+import "../Styles/AddJobModal.css"; // Reusing the same styles
 import EditJobForm from "./EditJobForm";
 
 function EditJobModal({ onClose, job, onUpdate }) {

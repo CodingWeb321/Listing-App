@@ -11,11 +11,20 @@ function Body({
   jobToEdit,
   onJobUpdated,
   onCloseEdit,
+  onJobTypeFilterChange,
+  onSeniorityFilterChange,
+  onEmploymentFilterChange,
+  onSearchChange,
 }) {
   return (
     <>
       <div className='container'>
-        <FilterPanel />
+        <FilterPanel
+          onJobTypeFilterChange={onJobTypeFilterChange}
+          onSeniorityFilterChange={onSeniorityFilterChange}
+          onEmploymentFilterChange={onEmploymentFilterChange}
+          onSearchChange={onSearchChange}
+        />
         <JobPanel
           jobs={jobs}
           onDelete={onDelete}
