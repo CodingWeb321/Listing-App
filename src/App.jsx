@@ -16,6 +16,7 @@ function App() {
   const [seniorityFilter, setSeniorityFilter] = useState("");
   const [employmentFilter, setEmploymentFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+
   //fetching data to load at first !
 
   useEffect(() => {
@@ -96,7 +97,9 @@ function App() {
       " " +
       job.companyName +
       " " +
-      job.location
+      job.location +
+      " " +
+      job.employmentType
     ).toLowerCase();
 
     const matchesText =
@@ -112,6 +115,7 @@ function App() {
       matchesText && matchesJobType && matchesSeniority && matchesEmployment
     );
   });
+  // console.log(filteredJobs);
   //-----------------------------------------------------------//
   return (
     <>

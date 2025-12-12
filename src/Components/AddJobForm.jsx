@@ -87,7 +87,7 @@ function AddJobForm({ onJobAdded, onClose }) {
             onChange={handleChange}
           >
             <option value=''>Select Job Type</option>
-            <option value='It'>IT</option>
+            <option value='IT'>IT</option>
             <option value='Sales/Marketing'>Sales/Marketing</option>
             <option value='Engineer'>Engineer</option>
             <option value='Other'>Others</option>

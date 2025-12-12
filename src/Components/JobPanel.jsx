@@ -44,7 +44,7 @@ function JobPanel({
         {jobs.map((job) => (
           <JobCard
             key={job.id}
-            jobs={job}
+            job={job} //jobs changed to job
             onDelete={onDelete}
             onEdit={onEdit}
           />

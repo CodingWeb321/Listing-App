@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../Styles/FilterPanel.css";
 
 function FilterPanel({
@@ -17,7 +17,7 @@ function FilterPanel({
 
   const jobTypes = [
     { value: "", label: "All Types" },
-    { value: "It", label: "IT" },
+    { value: "IT", label: "IT" },
     { value: "Sales/Marketing", label: "Sales/Marketing" },
     { value: "Engineer", label: "Engineer" },
     { value: "Other", label: "Other" },
@@ -67,7 +67,7 @@ function FilterPanel({
         <input
           type='text'
           id='textSearch'
-          placeholder='e.g., React, Backend, Marketing'
+          placeholder='e.g., Sales, Junior, Marketing'
           className='search-input'
           value={searchText}
           onChange={handleTextSearchChange}
